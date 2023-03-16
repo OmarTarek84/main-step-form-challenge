@@ -1,0 +1,103 @@
+@import "../../variables/mixins";
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0;
+  height: 100%;
+}
+
+h3 {
+  @include header;
+}
+
+h5 {
+  @include subheader;
+}
+
+.summary-box {
+  border: none;
+  background-color: $primary-color;
+  border-radius: 6px;
+  padding: 1.3rem;
+  margin-top: 3.5rem;
+
+  .plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .plan-change {
+
+      .plan-name {
+        color: $text-primary-color;
+        font-family: 'ubuntu-bold', sans-serif;
+        font-size: 1.54rem;
+        text-transform: capitalize;
+        display: block;
+        margin-bottom: .35rem;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: $secondary-color;
+        &:hover, &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .initial-plan-cost {
+      color: $text-primary-color;
+      font-family: 'ubuntu-bold', sans-serif;
+      font-size: 1.68rem;
+    }
+
+  }
+
+
+  hr {
+    margin: 2.3rem 0;
+  }
+
+
+  .add-ons {
+    .add-on {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.6rem;
+      &-title {
+        font-size: 1.45rem;
+        color: rgb(141 145 147);
+      }
+      &-price {
+        font-size: 1.5rem;
+        color: $text-primary-color;
+      }
+    }
+  }
+
+}
+
+
+.total-per {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.3rem;
+  padding: 0 2.5rem;
+  &-title {
+    font-size: 1.45rem;
+    color: rgb(141 145 147);
+  }
+  &-price {
+    font-size: 2.1rem;
+    color: $secondary-color;
+    font-family: 'ubuntu-bold', sans-serif;
+  }
+}

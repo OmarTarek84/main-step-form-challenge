@@ -1,0 +1,14 @@
+@import "./variables";
+
+@mixin header {
+  color: $text-primary-color;
+  font-size: 2.7rem;
+  font-family: "Ubuntu-bold";
+}
+
+@mixin subheader {
+  color: $text-secondary-color;
+  font-size: 1.3rem;
+  margin-top: 4px;
+  font-family: sans-serif;
+}

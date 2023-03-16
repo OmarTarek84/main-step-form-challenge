@@ -1,0 +1,56 @@
+@import "../../variables/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0;
+  height: 100%;
+}
+
+h3 {
+  @include header;
+}
+
+h5 {
+  @include subheader;
+}
+
+form {
+  margin-top: 3rem;
+  .forminput {
+    margin-top: 1.4rem;
+    .label-error {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      label {
+        display: block;
+        color: $text-primary-color;
+        font-size: 1.45rem;
+      }
+      .error {
+        color: red;
+        font-size: 1.1rem;
+      }
+    }
+    input {
+      margin-top: 0.5rem;
+      border: 1px solid $text-secondary-color;
+      width: 100%;
+      border-radius: 6px;
+      padding: 1rem;
+      color: $text-primary-color;
+      &:focus {
+        border: 1px solid $text-primary-color;
+      }
+      &:invalid,&.invalid {
+        border: 1px solid red;
+      }
+      ::placeholder {
+        font-size: 1.5rem;
+        color: rgb(141 145 147);
+      }
+    }
+  }
+}

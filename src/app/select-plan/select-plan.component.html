@@ -1,0 +1,41 @@
+<div class="select-plan">
+
+  <h3>Select Your Plan</h3>
+
+  <h5>You have the option of monthly or yearly billing</h5>
+
+  <form [formGroup]="form">
+
+    <div class="plans">
+      <div *ngFor="let plan of plans"
+           [ngClass]="{plan: true, selected: plan.value === planControlValue}">
+        <input type="radio" name="plan" [value]="plan.value" (change)="changePlan(plan.value)" />
+        <ng-container *ngIf="plan.value === 'arcade'">
+          <img src="../../assets/images/icon-arcade.svg" alt="arcade" />
+        </ng-container>
+        <ng-container *ngIf="plan.value === 'advanced'">
+          <img src="../../assets/images/icon-advanced.svg" alt="advanced" />
+        </ng-container>
+        <ng-container *ngIf="plan.value === 'pro'">
+          <img src="../../assets/images/icon-pro.svg" alt="pro" />
+        </ng-container>
+        <p class="title">{{plan.title}}</p>
+        <span class="price" *ngIf="durationControlValue === 'monthly'">${{plan.pricePerMonth}}/mo</span>
+        <span class="price" *ngIf="durationControlValue === 'yearly'">${{plan.pricePerYear}}/yr</span>
+        <p class="freemonths" *ngIf="isYearly">2 months free</p>
+      </div>
+    </div>
+
+
+    <div class="monthyear">
+      <span class="dur">Monthly</span>
+      <label class="switch">
+        <input type="checkbox" [checked]="isYearly" (change)="durationChanged($event)" >
+        <span class="slider round"></span>
+      </label>
+      <span class="dur">Yearly</span>
+    </div>
+
+  </form>
+
+</div>

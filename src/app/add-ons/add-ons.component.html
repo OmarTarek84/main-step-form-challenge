@@ -1,0 +1,23 @@
+<div class="add-ons">
+  <h3>Pick add-ons</h3>
+
+  <h5>Add-ons help enhance your gaming experience</h5>
+
+  <form [formGroup]="form">
+    <div class="addons-controls" formArrayName="addons">
+      <ng-container *ngFor="let addon of addons">
+        <div class="addon-box" [ngClass]="{active: isAddonChecked(addon.value)}">
+          <input type="checkbox" class="addon-checkbox" [value]="addon.value" (change)="fieldsChange($event, addon.value)"  />
+          <input type="checkbox" [checked]="isAddonChecked(addon.value)" />
+          <div class="title-subtitle">
+            <p class="title">{{addon.title}}</p>
+            <span class="subtitle">{{addon.subtitle}}</span>
+          </div>
+          <span class="pricesadded">+${{getAddonPrice(addon.value)}}/{{duration === 'monthly' ? 'mo': 'yr'}}</span>
+        </div>
+
+      </ng-container>
+    </div>
+  </form>
+
+</div>

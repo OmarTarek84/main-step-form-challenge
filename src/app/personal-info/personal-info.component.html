@@ -1,0 +1,36 @@
+<div class="personal-info">
+  <h3>Peronsal Info</h3>
+
+  <h5>Please provide your name, email address and phone</h5>
+
+  <form [formGroup]="form">
+
+    <div class="forminput">
+      <div class="label-error">
+        <label>Name</label>
+        <span *ngIf="name.touched && name.errors && name.errors['required']" class="error">This Field is required</span>
+      </div>
+      <input type="text" placeholder="e.g. Stephen King" [ngClass]="{invalid: name.touched && name.errors}" formControlName="name" />
+    </div>
+
+    <div class="forminput">
+      <div class="label-error">
+        <label>Email Address</label>
+        <span class="error" *ngIf="email.touched && email.errors && email.errors['required']">This Field is required</span>
+        <span class="error" *ngIf="email.touched &&email.errors && email.errors['email']">Invalid Email</span>
+      </div>
+      <input type="email" placeholder="e.g. stephenking@lorem.com" [ngClass]="{invalid: email.touched && email.errors}" formControlName="email" />
+    </div>
+
+    <div class="forminput">
+      <div class="label-error">
+        <label>Phone Number</label>
+        <span class="error" *ngIf="phone.touched && phone.errors && phone.errors['required']">This Field is required</span>
+      </div>
+      <input type="tel" placeholder="e.g. +1 234 567 890" [ngClass]="{invalid: phone.touched && phone.errors}" formControlName="phone" />
+    </div>
+
+  </form>
+
+
+</div>

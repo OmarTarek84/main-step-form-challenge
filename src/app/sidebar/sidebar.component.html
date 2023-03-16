@@ -1,0 +1,14 @@
+<div class="steps">
+
+  <div class="step"
+       (click)="ChangeStep(step)"
+       [ngClass]="{'active': selectedStep.number === step.number, 'disabled': step.number > 1 && !personalInfoFormValid}"
+       *ngFor="let step of steps">
+    <span class="stepno">{{step.number}}</span>
+    <div class="step-details">
+      <span class="step-number">STEP {{step.number}}</span>
+      <span class="step-title">{{step.title}}</span>
+    </div>
+  </div>
+
+</div>

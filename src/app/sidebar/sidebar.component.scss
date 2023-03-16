@@ -1,0 +1,57 @@
+@import "../../variables/variables";
+
+.steps {
+
+  margin-top: 2.2rem;
+
+  .step {
+    display: flex;
+    gap: 6px;
+    margin: 3.5rem 1rem 0 2rem;
+    cursor: pointer;
+
+    &.active span.stepno,
+    &:hover span.stepno {
+      background-color: $primary-color;
+      color: rgb(42, 42, 42);
+    }
+
+    &.disabled {
+      opacity: 0.75;
+      cursor: initial;
+    }
+
+    span.stepno {
+      color: white;
+      border: 1px solid white;
+      border-radius: 50%;
+      padding: 5px;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      font-size: 1.5rem;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .step-details {
+      margin-left: 1.2rem;
+      span {
+        display: block;
+        &.step-number {
+          color: #baadad;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+        }
+        &.step-title {
+          margin-top: 1px;
+          font-size: 1.7rem;
+          color: #e4e4e4;
+          font-family: 'Ubuntu-Bold', sans-serif;
+        }
+      }
+    }
+  }
+
+}

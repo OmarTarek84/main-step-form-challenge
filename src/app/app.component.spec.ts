@@ -20,11 +20,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'multi-step-form'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('multi-step-form');
-  });
+
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

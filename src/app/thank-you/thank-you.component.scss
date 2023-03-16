@@ -1,0 +1,20 @@
+@import "../../variables/mixins";
+
+.thank-you {
+  text-align: center;
+
+  h3 {
+    margin-top: 3rem;
+    font-size: 2.75rem;
+    color: $text-primary-color;
+    font-family: 'ubuntu-bold', sans-serif;
+  }
+
+  p {
+    margin-top: 2rem;
+    color: rgb(141 145 147);
+    font-size: 1.7rem;
+    line-height: 26px;
+    text-align: center;
+  }
+}

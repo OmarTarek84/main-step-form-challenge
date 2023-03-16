@@ -1,0 +1,38 @@
+<div class="summary">
+
+  <h3>Finishing up</h3>
+
+  <h5>Double-check everything looks OK before confirming</h5>
+
+  <div class="summary-box">
+
+    <div class="plan">
+      <div class="plan-change">
+        <span class="plan-name">{{planValue}} ({{durationValue}})</span>
+        <button (click)="goToDurationStep()">Change</button>
+      </div>
+      <p class="initial-plan-cost">${{pricePlan}}/{{durationValue === 'monthly' ? 'mo': 'yr'}}</p>
+    </div>
+
+    <hr />
+
+    <div class="add-ons">
+
+      <ng-container *ngFor="let addon of addonsControls.controls">
+        <div class="add-on">
+          <span class="add-on-title">{{addOnName(addon.value)}}</span>
+          <span class="add-on-price">+${{getAddonPrice(addon.value)}}/{{durationValue === 'monthly' ? 'mo': 'yr'}}</span>
+        </div>
+      </ng-container>
+
+
+    </div>
+
+  </div>
+
+  <div class="total-per">
+    <span class="total-per-title">Total (per {{durationValue === 'yearly' ? 'Year': 'Month'}})</span>
+    <span class="total-per-price">${{totalPrice}}/{{durationValue === 'monthly' ? 'mo': 'yr'}}</span>
+  </div>
+
+</div>

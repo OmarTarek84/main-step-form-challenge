@@ -1,0 +1,65 @@
+@import "../variables/variables";
+
+.form-box {
+  width: 70vw;
+  height: 80vh;
+  border-radius: 8px;
+  box-shadow: 2px 6px 9px 0px lightgrey;
+  background-color: white;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+
+  .sidebar {
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 274px;
+    height: 100%;
+  }
+
+  .content {
+    flex: 1;
+    margin: 0 8%;
+
+    .p {
+      height: calc(100% - 40px);
+      &.thankyou {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .submitFormBtn {
+      width: 0;
+      visibility: hidden;
+    }
+
+    .btn {
+      display: flex;
+      justify-content: space-between;
+      button {
+        border: none;
+        background-color: $text-primary-color;
+        color: rgb(235, 229, 229);
+        border-radius: 6px;
+        padding: .9rem 1.2rem;
+        max-height: 40px;
+        cursor: pointer;
+        &.back {
+          background-color: transparent;
+          color: $text-primary-color;
+          border: none;
+        }
+        &:disabled {
+          background-color: $text-secondary-color;
+        }
+      }
+    }
+
+  }
+
+}
