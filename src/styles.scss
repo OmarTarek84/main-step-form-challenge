@@ -26,6 +26,10 @@
 html {
   font-size: 62.5%;
   font-family: 'Ubuntu-Regular', sans-serif;
+
+  @media screen and (max-width: 750px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -35,4 +39,5 @@ body {
   align-items: center;
   background-color: $primary-color;
   min-height: 100vh;
+  position: relative;
 }

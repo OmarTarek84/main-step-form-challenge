@@ -19,10 +19,12 @@
         <ng-container *ngIf="plan.value === 'pro'">
           <img src="../../assets/images/icon-pro.svg" alt="pro" />
         </ng-container>
-        <p class="title">{{plan.title}}</p>
-        <span class="price" *ngIf="durationControlValue === 'monthly'">${{plan.pricePerMonth}}/mo</span>
-        <span class="price" *ngIf="durationControlValue === 'yearly'">${{plan.pricePerYear}}/yr</span>
-        <p class="freemonths" *ngIf="isYearly">2 months free</p>
+        <div class="details-box">
+          <p class="title">{{plan.title}}</p>
+          <span class="price" *ngIf="durationControlValue === 'monthly'">${{plan.pricePerMonth}}/mo</span>
+          <span class="price" *ngIf="durationControlValue === 'yearly'">${{plan.pricePerYear}}/yr</span>
+          <p class="freemonths" *ngIf="isYearly">2 months free</p>
+        </div>
       </div>
     </div>
 

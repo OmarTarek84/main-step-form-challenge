@@ -1,5 +1,22 @@
 @import "../variables/variables";
 
+
+.sidebar-responsive {
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+    background-image: url(../assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 100%;
+    height: 25vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}
+
 .form-box {
   width: 70vw;
   height: 80vh;
@@ -9,7 +26,21 @@
   padding: 1.6rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
   gap: 2rem;
+
+  @media screen and (max-width: 850px) {
+    width: 85vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 92vw;
+    height: 65vh;
+    margin-top: -120px;
+  }
 
 
   .sidebar {
@@ -19,11 +50,33 @@
     background-position: center center;
     min-width: 274px;
     height: 100%;
+
+    @media screen and (max-width: 1000px) {
+      min-width: 200px;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   .content {
     flex: 1;
     margin: 0 8%;
+
+    @media screen and (max-width: 1163px) {
+      margin: 0 5%;
+    }
+
+    @media screen and (max-width: 680px) {
+      margin: 0 2%;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin: 0 1%;
+      z-index: 1;
+      width: 90%;
+    }
 
     .p {
       height: calc(100% - 40px);
@@ -41,6 +94,9 @@
     .btn {
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
       button {
         border: none;
         background-color: $text-primary-color;
@@ -62,4 +118,35 @@
 
   }
 
+}
+
+.btn-responsive {
+  display: none;
+  justify-content: space-between;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    display: flex;
+  }
+  button {
+    border: none;
+    background-color: $text-primary-color;
+    color: rgb(235, 229, 229);
+    border-radius: 6px;
+    padding: .9rem 1.2rem;
+    max-height: 40px;
+    cursor: pointer;
+    &.back {
+      background-color: transparent;
+      color: $text-primary-color;
+      border: none;
+    }
+    &:disabled {
+      background-color: $text-secondary-color;
+    }
+  }
 }

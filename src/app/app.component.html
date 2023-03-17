@@ -1,3 +1,10 @@
+<div class="sidebar-responsive">
+  <app-sidebar [steps]="steps"
+               [personalInfoFormValid]="personalInfoFormValid"
+               [selectedStep]="selectedStep"
+               (changeStep)="stepChanged($event)"></app-sidebar>
+</div>
+
 <div class="form-box">
 
   <div class="sidebar">
@@ -64,4 +71,23 @@
 
   </div>
 
+</div>
+
+
+
+<div class="btn-responsive">
+  <button [style.visibility]="selectedStep.number > 1 && !formSubmitted ? 'visible': 'hidden'"
+          (click)="goToPreviousStep()"
+          class="back">
+    Go Back
+  </button>
+  <button [style.visibility]="selectedStep.number < 4 && !formSubmitted ? 'visible': 'hidden'"
+          (click)="goToNextStep()"
+          [disabled]="!personalInfoFormValid"
+          >
+    Next Step
+  </button>
+  <button *ngIf="selectedStep.number === 4 && !formSubmitted"
+          [disabled]="!personalInfoFormValid"
+          (click)="submitFormBtn.nativeElement.click()">Confirm</button>
 </div>

@@ -23,13 +23,30 @@ form {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    @media screen and (max-width: 400px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+    }
     .plan {
       min-height: 160px;
       border-radius: 6px;
       border: 1px solid rgb(203, 195, 195);
       position: relative;
       padding: 1.5rem;
+      max-width: 220px;
       flex: 1;
+
+      @media screen and (max-width: 750px) {
+        min-height: 100px;
+      }
+      @media screen and (max-width: 400px) {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        min-height: auto;
+        align-items: flex-start;
+      }
       cursor: pointer;
       &.selected {
         border: 1px solid $secondary-color;
@@ -47,22 +64,30 @@ form {
       img {
         width: 25px;
       }
-      p.title {
-        margin-top: 3.4rem;
-        font-family: 'ubuntu-bold', sans-serif;
-        color: $text-primary-color;
-        font-size: 1.4rem;
-      }
-      span.price {
-        margin-top: .7rem;
-        display: inline-block;
-        color: #999ca0;
-        font-size: 1.25rem;
-      }
-      p.freemonths {
-        margin-top: .7rem;
-        color: $text-primary-color;
-        font-size: 1.2rem;
+      .details-box {
+        @media screen and (max-width: 400px) {
+          margin-left: 8px;
+        }
+        p.title {
+          margin-top: 3.4rem;
+          font-family: 'ubuntu-bold', sans-serif;
+          color: $text-primary-color;
+          font-size: 1.6rem;
+          @media screen and (max-width: 400px) {
+            margin: 0;
+          }
+        }
+        span.price {
+          margin-top: .7rem;
+          display: inline-block;
+          color: #999ca0;
+          font-size: 1.25rem;
+        }
+        p.freemonths {
+          margin-top: .7rem;
+          color: $text-primary-color;
+          font-size: 1.2rem;
+        }
       }
     }
   }
